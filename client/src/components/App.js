@@ -7,7 +7,7 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100%;
   max-width: 500px;
-  height: 500px;  
+  height: 100%;  
   box-sizing: border-box;
   border: 1px  solid #0f263c;
   font-family: "Open Sans", sans-serif;
