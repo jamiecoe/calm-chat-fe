@@ -56,28 +56,26 @@ const Usermessage = styled.p`
 const StyledImg = styled.img`
 width: 12%;
 height: 12%;
-margin-top: 1rem;
+margin-top: 11px;
 margin-left: 2%;
+max-width: 44px;
 `
 
-const StyledKittyContainer = styled.div`
+const StyledBotContainer = styled.div`
   display: flex;
   width: 100%;
 `
 
 export class Message extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const speaker = this.props.messageObj.isUser ? (
       <Usermessage>{this.props.messageObj.speech}</Usermessage>
-    ) : (<StyledKittyContainer><StyledImg src={botAvatar} />
+    ) : (<StyledBotContainer><StyledImg src={botAvatar} />
       <Botmessage dotty={this.props.messageObj.speech === "" ? "dotty" : ""}>
         {this.props.messageObj.speech}
       </Botmessage>
-    </StyledKittyContainer>);
+    </StyledBotContainer>);
     return (
       <div>
         {speaker}

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
-  height: 15%;
+  height: 20%;
   background: #0f263c;
   position: relative;
   display: flex;
@@ -13,7 +13,7 @@ const StyledHeader = styled.div`
   color: white;
 `;
 
-const RefreshButton = styled.button`
+const NewChatBtn = styled.button`
   position: absolute;
   top: 3px;
   right: 5px;
@@ -24,8 +24,6 @@ const RefreshButton = styled.button`
   border: 1px solid #10aad1;
   border-radius: 2px;
 `;
-
-const Icon = styled.i``;
 
 const HeadingText = styled.div`
   text-align: center;
@@ -41,9 +39,9 @@ export class Header extends React.Component {
   render() {
     return (
       <StyledHeader>
-        <RefreshButton onClick={this.props.refresh}>
+        <NewChatBtn onClick={this.props.refresh}>
           NEW CHAT    
-        </RefreshButton>
+        </NewChatBtn>
         <HeadingText>
           <Styledh1>THE CALM ZONE WEBCHAT</Styledh1>
         </HeadingText>

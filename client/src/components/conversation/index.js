@@ -14,9 +14,6 @@ const Div = styled.div`
 `
 
 export class Conversation extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   scrollToBottom(){
     const end = ReactDOM.findDOMNode(this.scrollTarget);

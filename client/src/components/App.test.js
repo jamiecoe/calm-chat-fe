@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 const testApp = new App();
-const testObj = { speech: "Hello 👋, I am Little Window - a chat bot to help you get the information you need.", options: Array(0), resources: Array(0), retrigger: "Welcome follow up", json: () => ({ speech: 'hello', uniqueId: '1234', options: [] }) }
+const testObj = { speech: "Welcome to the Calm Zone Chat", options: Array(0), resources: Array(0), retrigger: "Welcome follow up", json: () => ({ speech: 'hello', uniqueId: '1234', options: [] }) }
 
 beforeEach(function () {
   global.fetch = jest.fn().mockImplementation(() => Promise.resolve(testObj));

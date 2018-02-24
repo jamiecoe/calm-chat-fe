@@ -5,10 +5,11 @@ import { Input } from "./input";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;  
   box-sizing: border-box;
-  border: 1px solid black;
+  border: 1px  solid #0f263c;
   font-family: "Open Sans", sans-serif;
 `;
 
@@ -54,11 +55,16 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.uniqueId);
-    this.sendMessage({
-      speech: "Little window welcome",
-      uniqueId: this.props.uniqueId
+    this.addMessage({
+      speech: "Welcome to the Calm Zone Chat.",
+      isUser: false,
+      isDot: false
     });
+    this.addMessage({
+      speech: "This is an automed chat service. How can we help?",
+      isUser: false,
+      isDot: false
+    })
   }
 
   sendMessage(data) {
@@ -95,7 +101,7 @@ export default class App extends React.Component {
   }
 
   sendToServer(data) {
-    return fetch("/usermessage", {
+    return fetch("http://ec2-35-178-100-91.eu-west-2.compute.amazonaws.com:3001/usermessage", {
       method: "POST",
       headers: new Headers({ "Content-Type": "application/json" }),
       credentials: "same-origin",
@@ -108,10 +114,16 @@ export default class App extends React.Component {
       messages: []
     });
 
-    this.sendMessage({
-      speech: "Little window welcome",
-      uniqueId: this.props.uniqueId
+    this.addMessage({
+      speech: "Welcome to the Calm Zone Chat.",
+      isUser: false,
+      isDot: false
     });
+    this.addMessage({
+      speech: "This is an automed chat service. How can we help?",
+      isUser: false,
+      isDot: false
+    })
   };
 
   render() {

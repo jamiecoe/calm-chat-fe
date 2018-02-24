@@ -8,23 +8,19 @@ const Botbuttons = styled.div`
   flex-direction: row;
 `;
 const Styledbutton = styled.button`
-  border: 2px #b0b0b0 solid;
-  color: #b0b0b0;
+  background: ${props => props.primary ? '#ffe000' : 'white'};
+  color: #333;
+  border-color: ${props => props.primary ? '#ffe000' : 'white'};
+  border-style: solid;
+  border-width: 2px;
   margin: 5%;
-  border-radius: 15px;
+  border-radius: 2px;
   font-size: 1rem;
-  padding-top: 3px;
-  padding-bottom: 4px;
-  width: 5rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  text-transform: uppercase;
 `;
 
-const Countrybutton = styled.button`
-  border: 2px #b0b0b0 solid;
-  color: #b0b0b0;
-  margin: 1%;
-  border-radius: 15px;
-  font-size: 1rem;
-`;
 
 export default class Button extends React.Component {
   constructor(props) {
@@ -51,21 +47,6 @@ export default class Button extends React.Component {
   render() {
     if (!this.props.options || this.state.disabled) return null;
 
-    if (this.props.options.length > 2) {
-      return (
-        <Botbuttons>
-          {this.props.options.map((option, index) => (
-            <Countrybutton
-              value={option.postback}
-              key={index}
-              onClick={() => this.clickHandler(option.text, option.postback)}
-            >
-              {option.text}
-            </Countrybutton>
-          ))}
-        </Botbuttons>
-      );
-    }
     return (
       <Botbuttons>
         {this.props.options.map((option, index) => (
@@ -73,6 +54,7 @@ export default class Button extends React.Component {
             value={option.postback}
             key={index}
             onClick={() => this.clickHandler(option.text, option.postback)}
+            
           >
             {option.text}
           </Styledbutton>

@@ -11,16 +11,24 @@ const Botresources = styled.div`
 `
 
 const Singleresource = styled.a`
-padding: 0.5rem;
-margin: 5px;
-border: 2px #B0B0B0 solid;
-border-radius: 15px;
+background: white;
+color: #333;
+border-color: white;
+border-style: solid;
+border-width: 2px;
+margin: 2% 5%;
+border-radius: 2px;
+font-size: 1rem;
+font-weight: bold;
+padding: 4px;
+text-decoration: none;
+&:hover {
+  background: #ffe000;
+  border-color: #ffe000;
+}
 `
 
 export default class Resources extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     if (!this.props.resources) {
